@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "ManageDatabase";
+}
+
+<h2>Data tables in Young Nats DB</h2>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Addresses <span class="badge">@(ViewBag.AddressesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+                @Html.ActionLink("New", "Create", "Addresses") |
+                @Html.ActionLink("View", "Index", "Addresses")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Address Notes <span class="badge">@(ViewBag.AddressNotesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "AddressNotes") |
+        @Html.ActionLink("View", "Index", "AddressNotes")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Assigned Calls <span class="badge">@(ViewBag.AssignedCallsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "AssignedCalls") |
+        @Html.ActionLink("View", "Index", "AssignedCalls")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>DoorKnocks <span class="badge">@(ViewBag.DoorKnocksCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "DoorKnocks") |
+        @Html.ActionLink("View", "Index", "DoorKnocks")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Electorates <span class="badge">@(ViewBag.ElectoratesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "Electorates") |
+        @Html.ActionLink("View", "Index", "Electorates")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>GeoTags <span class="badge">@(ViewBag.GeoTagsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "GeoTags") |
+        @Html.ActionLink("View", "Index", "GeoTags")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>KnownIndividuals <span class="badge">@(ViewBag.KnownIndividualsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "KnownIndividuals") |
+        @Html.ActionLink("View", "Index", "KnownIndividuals")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>MPs <span class="badge">@(ViewBag.MPsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "MPs") |
+        @Html.ActionLink("View", "Index", "MPs")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>NationalPartyMembers <span class="badge">@(ViewBag.NationalPartyMembersCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "NationalPartyMembers") |
+        @Html.ActionLink("View", "Index", "NationalPartyMembers")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>PamphletDeliveries <span class="badge">@(ViewBag.PamphletDeliveriesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "PamphletDeliveries") |
+        @Html.ActionLink("View", "Index", "PamphletDeliveries")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>PamphletRuns <span class="badge">@(ViewBag.PamphletRunsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "PamphletRuns") |
+        @Html.ActionLink("View", "Index", "PamphletRuns")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>PhoneCalls <span class="badge">@(ViewBag.PhoneCallsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "PhoneCalls") |
+        @Html.ActionLink("View", "Index", "PhoneCalls")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>PhoneNumbers <span class="badge">@(ViewBag.PhoneNumbersCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "PhoneNumbers") |
+        @Html.ActionLink("View", "Index", "PhoneNumbers")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>VoterNotes <span class="badge">@(ViewBag.VoterNotesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "VoterNotes") |
+        @Html.ActionLink("View", "Index", "VoterNotes")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Voters <span class="badge">@(ViewBag.VotersCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "Voters") |
+        @Html.ActionLink("View", "Index", "Voters")
+    </div>
+</div>

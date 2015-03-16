@@ -23,6 +23,26 @@ namespace YoungNatsDBv1.Controllers
             return View();
         }
 
+        public ActionResult ManageDatabase()
+        {
+            ViewBag.AddressesCount = db.Addresses.Count();
+            ViewBag.AddressNotesCount = db.AddressNotes.Count();
+            ViewBag.AssignedCallsCount = db.AssignedCalls.Count();
+            ViewBag.DoorKnocksCount = db.DoorKnocks.Count();
+            ViewBag.ElectoratesCount = db.Electorates.Count();
+            ViewBag.GeoTagsCount = db.GeoTags.Count();
+            ViewBag.KnownIndividualsCount = db.KnownIndividuals.Count();
+            ViewBag.MPsCount = db.MPs.Count();
+            ViewBag.NationalPartyMembersCount = db.NationalPartyMembers.Count();
+            ViewBag.PamphletDeliveriesCount = db.PamphletDeliveries.Count();
+            ViewBag.PamphletRunsCount = db.PamphletRuns.Count();
+            ViewBag.PhoneCallsCount = db.PhoneCalls.Count();
+            ViewBag.PhoneNumbersCount = db.PhoneNumbers.Count();
+            ViewBag.VoterNotesCount = db.VoterNotes.Count();
+            ViewBag.VotersCount = db.Voters.Count();
+            return View();
+        }
+
         public string MarkerData()
         {
             try

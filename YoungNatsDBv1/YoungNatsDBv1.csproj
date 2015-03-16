@@ -351,6 +351,7 @@
     <Content Include="Views\VoterNotes\Details.cshtml" />
     <Content Include="Views\VoterNotes\Edit.cshtml" />
     <Content Include="Views\VoterNotes\Index.cshtml" />
+    <Content Include="Views\Home\ManageDatabase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
