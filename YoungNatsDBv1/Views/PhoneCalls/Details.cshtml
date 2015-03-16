@@ -1,0 +1,58 @@
+﻿@model YoungNatsDBv1.DataModels.PhoneCall
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhoneCall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber.PhoneNumber1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WasThePhoneAnswered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WasThePhoneAnswered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallDateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PhoneCallId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

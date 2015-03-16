@@ -1,0 +1,45 @@
+﻿@model IEnumerable<YoungNatsDBv1.DataModels.MP>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Electorate.ElectorateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFirstBecameMP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Electorate.ElectorateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KnownIndividual.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFirstBecameMP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KnownIndividualId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KnownIndividualId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KnownIndividualId })
+        </td>
+    </tr>
+}
+
+</table>

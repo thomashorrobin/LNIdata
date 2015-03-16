@@ -1,0 +1,42 @@
+﻿@model YoungNatsDBv1.DataModels.PamphletRun
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PamphletRun</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PamphletRunNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PamphletRunNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PamphletRunShortTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PamphletRunShortTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PamphletRunId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

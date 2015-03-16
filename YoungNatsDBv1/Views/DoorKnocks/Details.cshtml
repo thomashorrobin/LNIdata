@@ -1,0 +1,58 @@
+﻿@model YoungNatsDBv1.DataModels.DoorKnock
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DoorKnock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpokeToSomeoneAtTheAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpokeToSomeoneAtTheAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAndTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DoorKnockId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

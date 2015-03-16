@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ViewLog";
+}
+
+<h2>Interaction Log for @ViewBag.name</h2>
+<br />
+<h6>@ViewBag.address</h6>
+
+<hr />
+
+@foreach (var item in ViewBag.log)
+{
+    @Html.Raw(item.GetHtml(new string[0]))
+}

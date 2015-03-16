@@ -1,0 +1,50 @@
+﻿@model YoungNatsDBv1.DataModels.VoterNote
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VoterNote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voter.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voter.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VoterNoteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

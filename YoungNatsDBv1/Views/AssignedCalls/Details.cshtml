@@ -1,0 +1,66 @@
+﻿@model YoungNatsDBv1.DataModels.AssignedCall
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssignedCall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual1.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual1.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneCall.CallNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneCall.CallNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber.PhoneNumber1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTimeAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTimeAssigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallCompleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssignedCallId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

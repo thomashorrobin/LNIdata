@@ -1,0 +1,58 @@
+﻿@model YoungNatsDBv1.DataModels.KnownIndividual
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KnownIndividual</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MP.KnownIndividualId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MP.KnownIndividualId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NationalPartyMember.KnownIndividualId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationalPartyMember.KnownIndividualId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentNationalPartyMember)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentNationalPartyMember)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KnownIndividualId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

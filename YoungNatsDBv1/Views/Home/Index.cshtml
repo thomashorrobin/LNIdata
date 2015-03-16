@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Young Nats DB</h1>
+    <p class="lead">This app is designed to display data and also as a CRUD input for phone calling.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Start Calling &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Maps</h2>
+        <p>
+            Young Nats DB has a powerful Google Maps tool for visualising geo-tagged data. Voters who are assigned to an address that has latitude and longitude data tagged to it show up on the map.
+            They are colour coded based on which party they support. If party preference isn't known then they'll have a white pin.
+        </p>
+        <p><a class="btn btn-default" href="~/Home/Map">View map &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Members</h2>
+        <p>View members details and work that they have done. This includes phone calling, door knocking, and delivering pamphlets. Click on their log to check out some sample data.</p>
+        <p><a class="btn btn-default" href="~/KnownIndividuals">View Members &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Voters</h2>
+        <p>You can easily view voters in your area and look back at the interactions they've had with MPs and volunteers. Voters known preferences and concerns can also be noted.</p>
+        <p><a class="btn btn-default" href="~/Voters">View Voters &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<YoungNatsDBv1.DataModels.AssignedCall>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KnownIndividual1.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneCall.CallNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeAssigned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallCompleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KnownIndividual.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KnownIndividual1.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneCall.CallNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber.PhoneNumber1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeAssigned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CallCompleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssignedCallId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssignedCallId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssignedCallId })
+        </td>
+    </tr>
+}
+
+</table>
