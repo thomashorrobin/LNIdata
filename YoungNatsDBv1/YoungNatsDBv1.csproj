@@ -182,6 +182,7 @@
     <Compile Include="Controllers\VotersController.cs" />
     <Compile Include="DataModels\Address.cs" />
     <Compile Include="DataModels\AddressNote.cs" />
+    <Compile Include="DataModels\AspNetUser.cs" />
     <Compile Include="DataModels\AssignedCall.cs" />
     <Compile Include="DataModels\DoorKnock.cs" />
     <Compile Include="DataModels\Electorate.cs" />

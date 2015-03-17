@@ -11,6 +11,7 @@ namespace YoungNatsDBv1.DataModels
         public KnownIndividual()
         {
             AddressNotes = new HashSet<AddressNote>();
+            AspNetUsers = new HashSet<AspNetUser>();
             AssignedCalls = new HashSet<AssignedCall>();
             AssignedCalls1 = new HashSet<AssignedCall>();
             DoorKnocks = new HashSet<DoorKnock>();
@@ -33,6 +34,8 @@ namespace YoungNatsDBv1.DataModels
         public bool CurrentNationalPartyMember { get; set; }
 
         public virtual ICollection<AddressNote> AddressNotes { get; set; }
+
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
 
         public virtual ICollection<AssignedCall> AssignedCalls { get; set; }
 

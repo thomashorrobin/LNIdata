@@ -14,6 +14,7 @@ namespace YoungNatsDBv1.DataModels
 
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<AddressNote> AddressNotes { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AssignedCall> AssignedCalls { get; set; }
         public virtual DbSet<DoorKnock> DoorKnocks { get; set; }
         public virtual DbSet<Electorate> Electorates { get; set; }

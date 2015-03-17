@@ -8,6 +8,8 @@ namespace YoungNatsDBv1.DataModels
 {
     public partial class KnownIndividual
     {
+        public string FullName { get { return FirstName + " " + LastName; } }
+
         public override string ToString()
         {
             string suffix;

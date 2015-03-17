@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using YoungNatsDBv1.DataModels;
 
 namespace YoungNatsDBv1.Controllers
@@ -19,6 +20,14 @@ namespace YoungNatsDBv1.Controllers
         {
             var assignedCalls = db.AssignedCalls.Include(a => a.KnownIndividual).Include(a => a.KnownIndividual1).Include(a => a.PhoneCall).Include(a => a.PhoneNumber);
             return View(assignedCalls.ToList());
+        }
+
+        // GET: AssignedCalls/MyCalls
+        public ActionResult MyCalls()
+        {
+            AspNetUser user = db.AspNetUsers.Single(e => e.UserName == User.Identity.Name);
+            KnownIndividual knownIndividual = db.KnownIndividuals.Find(user.KnownIndividualId);
+            return Content(knownIndividual.FullName);
         }
 
         // GET: AssignedCalls/Details/5
