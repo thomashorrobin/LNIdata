@@ -14,8 +14,6 @@ namespace YoungNatsDBv1.DataModels
 
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<AddressNote> AddressNotes { get; set; }
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AssignedCall> AssignedCalls { get; set; }
         public virtual DbSet<DoorKnock> DoorKnocks { get; set; }
         public virtual DbSet<Electorate> Electorates { get; set; }
@@ -27,6 +25,8 @@ namespace YoungNatsDBv1.DataModels
         public virtual DbSet<PamphletRun> PamphletRuns { get; set; }
         public virtual DbSet<PhoneCall> PhoneCalls { get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
+        public virtual DbSet<PoliticalParty> PoliticalParties { get; set; }
+        public virtual DbSet<VoterAssessment> VoterAssessments { get; set; }
         public virtual DbSet<VoterNote> VoterNotes { get; set; }
         public virtual DbSet<Voter> Voters { get; set; }
 
@@ -63,11 +63,6 @@ namespace YoungNatsDBv1.DataModels
                 .HasMany(e => e.Voters)
                 .WithRequired(e => e.Address)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<AspNetRole>()
-                .HasMany(e => e.AspNetUsers)
-                .WithMany(e => e.AspNetRoles)
-                .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
 
             modelBuilder.Entity<Electorate>()
                 .Property(e => e.ElectorateName)
@@ -137,6 +132,11 @@ namespace YoungNatsDBv1.DataModels
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KnownIndividual>()
+                .HasMany(e => e.VoterAssessments)
+                .WithRequired(e => e.KnownIndividual)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KnownIndividual>()
                 .HasMany(e => e.VoterNotes)
                 .WithRequired(e => e.KnownIndividual)
                 .WillCascadeOnDelete(false);
@@ -186,6 +186,10 @@ namespace YoungNatsDBv1.DataModels
                 .WithOptional(e => e.PhoneNumber1)
                 .HasForeignKey(e => e.HomeNumber);
 
+            modelBuilder.Entity<PoliticalParty>()
+                .Property(e => e.PartyName)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Voter>()
                 .Property(e => e.FirstName)
                 .IsUnicode(false);
@@ -201,6 +205,11 @@ namespace YoungNatsDBv1.DataModels
             modelBuilder.Entity<Voter>()
                 .Property(e => e.PoliticalLeanings)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Voter>()
+                .HasMany(e => e.VoterAssessments)
+                .WithRequired(e => e.Voter)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Voter>()
                 .HasMany(e => e.VoterNotes)

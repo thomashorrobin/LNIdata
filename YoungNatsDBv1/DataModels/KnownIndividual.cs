@@ -16,6 +16,7 @@ namespace YoungNatsDBv1.DataModels
             DoorKnocks = new HashSet<DoorKnock>();
             PamphletDeliveries = new HashSet<PamphletDelivery>();
             PhoneCalls = new HashSet<PhoneCall>();
+            VoterAssessments = new HashSet<VoterAssessment>();
             VoterNotes = new HashSet<VoterNote>();
         }
 
@@ -46,6 +47,8 @@ namespace YoungNatsDBv1.DataModels
         public virtual ICollection<PamphletDelivery> PamphletDeliveries { get; set; }
 
         public virtual ICollection<PhoneCall> PhoneCalls { get; set; }
+
+        public virtual ICollection<VoterAssessment> VoterAssessments { get; set; }
 
         public virtual ICollection<VoterNote> VoterNotes { get; set; }
     }

@@ -10,6 +10,7 @@ namespace YoungNatsDBv1.DataModels
     {
         public Voter()
         {
+            VoterAssessments = new HashSet<VoterAssessment>();
             VoterNotes = new HashSet<VoterNote>();
         }
 
@@ -44,6 +45,8 @@ namespace YoungNatsDBv1.DataModels
         public virtual PhoneNumber PhoneNumber { get; set; }
 
         public virtual PhoneNumber PhoneNumber1 { get; set; }
+
+        public virtual ICollection<VoterAssessment> VoterAssessments { get; set; }
 
         public virtual ICollection<VoterNote> VoterNotes { get; set; }
     }

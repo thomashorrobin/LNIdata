@@ -27,6 +27,5 @@ namespace YoungNatsDBv1.DataModels
         public virtual KnownIndividual KnownIndividual { get; set; }
 
         public virtual PamphletRun PamphletRun { get; set; }
-
     }
 }

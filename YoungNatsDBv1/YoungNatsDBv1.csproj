@@ -178,17 +178,8 @@
     <Compile Include="Controllers\PhoneNumbersController.cs" />
     <Compile Include="Controllers\VoterNotesController.cs" />
     <Compile Include="Controllers\VotersController.cs" />
-    <Compile Include="DontDeleteDataModels\Address.cs" />
-    <Compile Include="DontDeleteDataModels\DoorKnock.cs" />
-    <Compile Include="DontDeleteDataModels\GeoTag.cs" />
-    <Compile Include="DontDeleteDataModels\KnownIndividual.cs" />
-    <Compile Include="DontDeleteDataModels\PamphletDelivery.cs" />
-    <Compile Include="DontDeleteDataModels\PhoneCall.cs" />
-    <Compile Include="DontDeleteDataModels\Voter.cs" />
     <Compile Include="DataModels\Address.cs" />
     <Compile Include="DataModels\AddressNote.cs" />
-    <Compile Include="DataModels\AspNetRole.cs" />
-    <Compile Include="DataModels\AspNetUser.cs" />
     <Compile Include="DataModels\AssignedCall.cs" />
     <Compile Include="DataModels\DoorKnock.cs" />
     <Compile Include="DataModels\Electorate.cs" />
@@ -201,8 +192,17 @@
     <Compile Include="DataModels\PamphletRun.cs" />
     <Compile Include="DataModels\PhoneCall.cs" />
     <Compile Include="DataModels\PhoneNumber.cs" />
+    <Compile Include="DataModels\PoliticalParty.cs" />
     <Compile Include="DataModels\Voter.cs" />
+    <Compile Include="DataModels\VoterAssessment.cs" />
     <Compile Include="DataModels\VoterNote.cs" />
+    <Compile Include="DontDeleteDataModels\Address.cs" />
+    <Compile Include="DontDeleteDataModels\DoorKnock.cs" />
+    <Compile Include="DontDeleteDataModels\GeoTag.cs" />
+    <Compile Include="DontDeleteDataModels\KnownIndividual.cs" />
+    <Compile Include="DontDeleteDataModels\PamphletDelivery.cs" />
+    <Compile Include="DontDeleteDataModels\PhoneCall.cs" />
+    <Compile Include="DontDeleteDataModels\Voter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
