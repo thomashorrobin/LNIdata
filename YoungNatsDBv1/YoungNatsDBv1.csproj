@@ -176,6 +176,8 @@
     <Compile Include="Controllers\PamphletRunsController.cs" />
     <Compile Include="Controllers\PhoneCallsController.cs" />
     <Compile Include="Controllers\PhoneNumbersController.cs" />
+    <Compile Include="Controllers\PoliticalPartiesController.cs" />
+    <Compile Include="Controllers\VoterAssessmentsController.cs" />
     <Compile Include="Controllers\VoterNotesController.cs" />
     <Compile Include="Controllers\VotersController.cs" />
     <Compile Include="DataModels\Address.cs" />
@@ -352,6 +354,16 @@
     <Content Include="Views\VoterNotes\Edit.cshtml" />
     <Content Include="Views\VoterNotes\Index.cshtml" />
     <Content Include="Views\Home\ManageDatabase.cshtml" />
+    <Content Include="Views\VoterAssessments\Create.cshtml" />
+    <Content Include="Views\VoterAssessments\Delete.cshtml" />
+    <Content Include="Views\VoterAssessments\Details.cshtml" />
+    <Content Include="Views\VoterAssessments\Edit.cshtml" />
+    <Content Include="Views\VoterAssessments\Index.cshtml" />
+    <Content Include="Views\PoliticalParties\Create.cshtml" />
+    <Content Include="Views\PoliticalParties\Delete.cshtml" />
+    <Content Include="Views\PoliticalParties\Details.cshtml" />
+    <Content Include="Views\PoliticalParties\Edit.cshtml" />
+    <Content Include="Views\PoliticalParties\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

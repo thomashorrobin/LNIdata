@@ -38,6 +38,8 @@ namespace YoungNatsDBv1.Controllers
             ViewBag.PamphletRunsCount = db.PamphletRuns.Count();
             ViewBag.PhoneCallsCount = db.PhoneCalls.Count();
             ViewBag.PhoneNumbersCount = db.PhoneNumbers.Count();
+            ViewBag.PoliticalPartiesCount = db.PoliticalParties.Count();
+            ViewBag.VoterAssessmentsCount = db.VoterAssessments.Count();
             ViewBag.VoterNotesCount = db.VoterNotes.Count();
             ViewBag.VotersCount = db.Voters.Count();
             return View();

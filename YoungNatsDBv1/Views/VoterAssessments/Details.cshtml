@@ -1,0 +1,66 @@
+﻿@model YoungNatsDBv1.DataModels.VoterAssessment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VoterAssessment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KnownIndividual.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnownIndividual.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoliticalParty.PartyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoliticalParty.PartyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voter.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voter.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VotingNationalLikelihood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VotingNationalLikelihood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VotingLikelihood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VotingLikelihood)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VoterAssessmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

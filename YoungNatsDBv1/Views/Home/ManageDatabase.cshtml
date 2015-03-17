@@ -137,6 +137,26 @@
 <hr />
 <div class="row">
     <div class="col-lg-7">
+        <h5>Political Parties <span class="badge">@(ViewBag.PoliticalPartiesCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "PoliticalParties") |
+        @Html.ActionLink("View", "Index", "PoliticalParties")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
+        <h5>Voter Assessments <span class="badge">@(ViewBag.VoterAssessmentsCount)</span></h5>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("New", "Create", "VoterAssessments") |
+        @Html.ActionLink("View", "Index", "VoterAssessments")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-7">
         <h5>Voter Notes <span class="badge">@(ViewBag.VoterNotesCount)</span></h5>
     </div>
     <div class="col-lg-3">
