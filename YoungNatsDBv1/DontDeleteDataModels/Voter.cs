@@ -12,5 +12,7 @@ namespace YoungNatsDBv1.DataModels
         {
             return this.FirstName + " " + this.LastName;
         }
+
+        public string FullName{ get{return this.FirstName + " " + this.LastName; }}
     }
 }

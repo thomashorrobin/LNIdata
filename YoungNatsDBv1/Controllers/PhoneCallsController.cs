@@ -34,6 +34,7 @@ namespace YoungNatsDBv1.Controllers
             ViewBag.KnownIndividualId = assignedCall.AssignedTo;
             ViewBag.PhoneNumberId = assignedCall.PhoneNumberId;
             ViewBag.CallTime = DateTime.Now;
+            ViewBag.number = assignedCall.PhoneNumber.PhoneNumber1;
             return View();
         }
 
