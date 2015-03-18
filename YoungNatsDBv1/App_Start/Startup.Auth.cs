@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using YoungNatsDBv1.Models;
+using System.Web.Configuration;
 
 namespace YoungNatsDBv1
 {
@@ -53,10 +54,11 @@ namespace YoungNatsDBv1
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
+            
+            
             app.UseFacebookAuthentication(
-               appId: "932875723423908",
-               appSecret: "6cfae72f80ab6ec032b58ce360a6e8b1");
+               appId: WebConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: WebConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
