@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using YoungNatsDBv1.DataModels;
+using YoungNatsDBv1.Models;
 
 namespace YoungNatsDBv1.Controllers
 {
@@ -19,6 +20,50 @@ namespace YoungNatsDBv1.Controllers
         {
             var phoneCalls = db.PhoneCalls.Include(p => p.KnownIndividual).Include(p => p.PhoneNumber);
             return View(phoneCalls.ToList());
+        }
+
+        // GET: PhoneCalls/NewCall?AssignedCallId=23
+        public ActionResult NewCall(int? AssignedCallId)
+        {
+            if (AssignedCallId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AssignedCall assignedCall = db.AssignedCalls.Find(AssignedCallId);
+            ViewBag.voters = db.Voters.Where(e => e.HomeNumber == assignedCall.PhoneNumberId).ToList();
+            ViewBag.KnownIndividualId = assignedCall.AssignedTo;
+            ViewBag.PhoneNumberId = assignedCall.PhoneNumberId;
+            ViewBag.CallTime = DateTime.Now;
+            return View();
+        }
+
+        public void AddVoterAssessment(int? VoterId, int? KnownIndividualId, int? VotingNationalLikelihood, int? PoliticalPartyId, int? VotingLikelihood)
+        {
+            VoterAssessment voterAssessment = new VoterAssessment() { VoterId = (int)VoterId, KnownIndividualId = (int)KnownIndividualId, VotingNationalLikelihood = (int)VotingNationalLikelihood, VotingLikelihood = (int)VotingLikelihood, AssessmentDate = DateTime.Now };
+            db.VoterAssessments.Add(voterAssessment);
+            db.SaveChanges();
+        }
+
+        // POST: PhoneCalls/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NewCall([Bind(Include = "PhoneCallId,PhoneNumberId,KnownIndividualId,WasThePhoneAnswered,CallNotes,CallDateTime")] PhoneCall phoneCall)
+        {
+            if (ModelState.IsValid)
+            {
+                //return View("Details",phoneCall);
+                phoneCall.CallDateTime = DateTime.Now;
+                db.PhoneCalls.Add(phoneCall);
+                db.SaveChanges();
+                return RedirectToAction("MyCalls", "AssignedCalls");
+            }
+
+            return Content("Form submission has failed, please contacted Thomas Horrobin for assistance");
+            //ViewBag.KnownIndividualId = new SelectList(db.KnownIndividuals, "KnownIndividualId", "FirstName", phoneCall.KnownIndividualId);
+            //ViewBag.PhoneNumberId = new SelectList(db.PhoneNumbers, "PhoneNumberId", "PhoneNumber1", phoneCall.PhoneNumberId);
+            //return View(phoneCall);
         }
 
         // GET: PhoneCalls/Details/5

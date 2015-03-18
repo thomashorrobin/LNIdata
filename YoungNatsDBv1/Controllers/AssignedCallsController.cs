@@ -27,7 +27,20 @@ namespace YoungNatsDBv1.Controllers
         {
             AspNetUser user = db.AspNetUsers.Single(e => e.UserName == User.Identity.Name);
             KnownIndividual knownIndividual = db.KnownIndividuals.Find(user.KnownIndividualId);
-            return Content(knownIndividual.FullName);
+            ViewBag.name = knownIndividual.FullName;
+            List<AssignedCall> callsToMake = db.AssignedCalls.Where(e => e.AssignedTo == knownIndividual.KnownIndividualId).OrderByDescending(e => e.DateTimeAssigned).ToList();
+            return View(callsToMake);
+        }
+
+        // GET: AssignedCalls/MarkAsComplete/5
+        public ActionResult MarkAsComplete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            db.AssignedCalls.Find(id).CallCompleted = true;
+            return MyCalls();
         }
 
         // GET: AssignedCalls/Details/5

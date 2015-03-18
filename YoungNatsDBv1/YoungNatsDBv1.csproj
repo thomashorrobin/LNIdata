@@ -365,6 +365,8 @@
     <Content Include="Views\PoliticalParties\Details.cshtml" />
     <Content Include="Views\PoliticalParties\Edit.cshtml" />
     <Content Include="Views\PoliticalParties\Index.cshtml" />
+    <Content Include="Views\AssignedCalls\MyCalls.cshtml" />
+    <Content Include="Views\PhoneCalls\NewCall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
