@@ -21,6 +21,13 @@ namespace YoungNatsDBv1.Controllers
             return View(voterAssessments.ToList());
         }
 
+        public PartialViewResult AssessmentPartial(int VoterId, int KnownIndividualId)
+        {
+            ViewBag.VoterId = VoterId;
+            ViewBag.KnownIndividualId = KnownIndividualId;
+            return PartialView();
+        }
+
         // GET: VoterAssessments/Details/5
         public ActionResult Details(int? id)
         {
