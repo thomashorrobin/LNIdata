@@ -13,5 +13,10 @@ namespace YoungNatsDBv1.DataModels
         {
             return "{ \"lat\":" + Latitude.ToString() + ", \"lng\":" + Longitude.ToString() + " }";
         }
+
+        public string GetHtml()
+        {
+            return "<br/><p>" + this.AddressId + " " + this.Latitude + " " + this.Longitude + "</p>";
+        }
     }
 }

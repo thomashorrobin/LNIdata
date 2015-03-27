@@ -11,12 +11,12 @@ namespace YoungNatsDBv1.DataModels
 
         public string GetJson()
         {
+            string icon;
             if (GeoTag == null)
             {
-                return "{}";
+                icon = "http://maps.google.com/mapfiles/ms/icons/white-dot.png";
             }
-            string icon;
-            if (PoliticalLeanings.ToUpper().Contains("NATIONAL"))
+            else if (PoliticalLeanings.ToUpper().Contains("NATIONAL"))
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
             }
