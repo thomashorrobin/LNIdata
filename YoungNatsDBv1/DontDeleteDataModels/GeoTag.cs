@@ -11,7 +11,7 @@ namespace YoungNatsDBv1.DataModels
 
         public string GetJson()
         {
-            return "{ \"lat\":" + Latitude.ToString() + ", \"lng\":" + Longitude.ToString() + " }";
+            return "{ \"lat\": " + Latitude.ToString() + ", \"lng\": " + Longitude.ToString() + " }";
         }
 
         public string GetHtml()

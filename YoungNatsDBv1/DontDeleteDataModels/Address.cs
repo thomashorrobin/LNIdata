@@ -14,7 +14,7 @@ namespace YoungNatsDBv1.DataModels
             string icon;
             if (PoliticalLeanings == null)
             {
-                icon = "http://maps.google.com/mapfiles/ms/icons/white-dot.png";
+                icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
             }
             else if (PoliticalLeanings == 4)
             {
