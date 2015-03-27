@@ -186,6 +186,7 @@
     <Compile Include="DataModels\AssignedCall.cs" />
     <Compile Include="DataModels\DoorKnock.cs" />
     <Compile Include="DataModels\Electorate.cs" />
+    <Compile Include="DataModels\EmailAddress.cs" />
     <Compile Include="DataModels\GeoTag.cs" />
     <Compile Include="DataModels\KnownIndividual.cs" />
     <Compile Include="DataModels\Model1.cs" />

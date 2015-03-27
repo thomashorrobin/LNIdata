@@ -28,23 +28,25 @@ namespace YoungNatsDBv1.DataModels
 
         public int ElectorateId { get; set; }
 
-        [StringLength(100)]
-        public string Email { get; set; }
-
-        [StringLength(50)]
-        public string PoliticalLeanings { get; set; }
-
         public int? CellNumber { get; set; }
 
         public int? HomeNumber { get; set; }
+
+        public int? Email { get; set; }
+
+        public int? PoliticalLeanings { get; set; }
 
         public virtual Address Address { get; set; }
 
         public virtual Electorate Electorate { get; set; }
 
+        public virtual EmailAddress EmailAddress { get; set; }
+
         public virtual PhoneNumber PhoneNumber { get; set; }
 
         public virtual PhoneNumber PhoneNumber1 { get; set; }
+
+        public virtual PoliticalParty PoliticalParty { get; set; }
 
         public virtual ICollection<VoterAssessment> VoterAssessments { get; set; }
 

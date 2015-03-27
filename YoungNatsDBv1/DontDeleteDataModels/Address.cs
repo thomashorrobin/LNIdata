@@ -12,33 +12,33 @@ namespace YoungNatsDBv1.DataModels
         public string GetJson()
         {
             string icon;
-            if (GeoTag == null)
+            if (PoliticalLeanings == null)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/white-dot.png";
             }
-            else if (PoliticalLeanings.ToUpper().Contains("NATIONAL"))
+            else if (PoliticalLeanings == 4)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
             }
-            else if (PoliticalLeanings.ToUpper().Contains("LABOUR"))
+            else if (PoliticalLeanings == 5)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
             }
-            else if (PoliticalLeanings.ToUpper().Contains("ACT"))
+            else if (PoliticalLeanings == 1005)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
             }
-            else if (PoliticalLeanings.ToUpper().Contains("GREEN"))
+            else if (PoliticalLeanings == 6)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
             }
-            else if (PoliticalLeanings.ToUpper().Contains("UNITED FUTURE"))
+            else if (PoliticalLeanings == 1006)
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
             }
             else
             {
-                icon = "http://maps.google.com/mapfiles/ms/icons/white-dot.png";
+                icon = "http://maps.google.com/mapfiles/ms/icons/black-dot.png";
             }
             return "{ \"position\": " + GeoTag.GetJson() + ", \"title\": \"" + this.Address1 + "\", \"icon\":\"" + icon + "\" }";
         }

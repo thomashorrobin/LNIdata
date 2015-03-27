@@ -10,7 +10,9 @@ namespace YoungNatsDBv1.DataModels
     {
         public PoliticalParty()
         {
+            Addresses = new HashSet<Address>();
             VoterAssessments = new HashSet<VoterAssessment>();
+            Voters = new HashSet<Voter>();
         }
 
         public int PoliticalPartyId { get; set; }
@@ -19,6 +21,10 @@ namespace YoungNatsDBv1.DataModels
         [StringLength(50)]
         public string PartyName { get; set; }
 
+        public virtual ICollection<Address> Addresses { get; set; }
+
         public virtual ICollection<VoterAssessment> VoterAssessments { get; set; }
+
+        public virtual ICollection<Voter> Voters { get; set; }
     }
 }

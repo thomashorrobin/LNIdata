@@ -25,14 +25,15 @@ namespace YoungNatsDBv1.DataModels
 
         public int ElectorateId { get; set; }
 
-        [StringLength(50)]
-        public string PoliticalLeanings { get; set; }
-
         public int? GeoTagAddressId { get; set; }
+
+        public int? PoliticalLeanings { get; set; }
 
         public virtual Electorate Electorate { get; set; }
 
         public virtual GeoTag GeoTag { get; set; }
+
+        public virtual PoliticalParty PoliticalParty { get; set; }
 
         public virtual ICollection<AddressNote> AddressNotes { get; set; }
 

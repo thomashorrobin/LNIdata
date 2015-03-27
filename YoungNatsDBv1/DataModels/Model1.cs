@@ -18,6 +18,7 @@ namespace YoungNatsDBv1.DataModels
         public virtual DbSet<AssignedCall> AssignedCalls { get; set; }
         public virtual DbSet<DoorKnock> DoorKnocks { get; set; }
         public virtual DbSet<Electorate> Electorates { get; set; }
+        public virtual DbSet<EmailAddress> EmailAddresses { get; set; }
         public virtual DbSet<GeoTag> GeoTags { get; set; }
         public virtual DbSet<KnownIndividual> KnownIndividuals { get; set; }
         public virtual DbSet<MP> MPs { get; set; }
@@ -35,10 +36,6 @@ namespace YoungNatsDBv1.DataModels
         {
             modelBuilder.Entity<Address>()
                 .Property(e => e.Address1)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Address>()
-                .Property(e => e.PoliticalLeanings)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Address>()
@@ -78,6 +75,11 @@ namespace YoungNatsDBv1.DataModels
                 .HasMany(e => e.Voters)
                 .WithRequired(e => e.Electorate)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<EmailAddress>()
+                .HasMany(e => e.Voters)
+                .WithOptional(e => e.EmailAddress)
+                .HasForeignKey(e => e.Email);
 
             modelBuilder.Entity<GeoTag>()
                 .HasMany(e => e.Addresses)
@@ -191,20 +193,22 @@ namespace YoungNatsDBv1.DataModels
                 .Property(e => e.PartyName)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<PoliticalParty>()
+                .HasMany(e => e.Addresses)
+                .WithOptional(e => e.PoliticalParty)
+                .HasForeignKey(e => e.PoliticalLeanings);
+
+            modelBuilder.Entity<PoliticalParty>()
+                .HasMany(e => e.Voters)
+                .WithOptional(e => e.PoliticalParty)
+                .HasForeignKey(e => e.PoliticalLeanings);
+
             modelBuilder.Entity<Voter>()
                 .Property(e => e.FirstName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Voter>()
                 .Property(e => e.LastName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Voter>()
-                .Property(e => e.Email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Voter>()
-                .Property(e => e.PoliticalLeanings)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Voter>()
