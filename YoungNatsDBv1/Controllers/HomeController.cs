@@ -97,6 +97,7 @@ namespace YoungNatsDBv1.Controllers
                             GeoTag geoTag = new GeoTag { AddressId = address.AddressId, Latitude = double.Parse(latitudeElement.Value.ToString()), Longitude = double.Parse(longitudeElement.Value.ToString()) };
                             text.AppendLine(geoTag.GetHtml());
                             db.GeoTags.Add(geoTag);
+                            address.GeoTagAddressId = geoTag.AddressId;
                         }
                     }
                 }
