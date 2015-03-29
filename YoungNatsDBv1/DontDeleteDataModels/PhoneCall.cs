@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace YoungNatsDBv1.DataModels
 {
-    public partial class PhoneCall : Interfaces.IVoterLog, Interfaces.IKnownIndividualLog
+    public partial class PhoneCall : Interfaces.IVoterLog, Interfaces.IKnownIndividualLog, Interfaces.IAddressLog
     {
+        public int AddressId { get { return this.AddressId; } }
 
         public DateTime InteractionDate
         {

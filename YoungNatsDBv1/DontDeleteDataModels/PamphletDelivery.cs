@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YoungNatsDBv1.DataModels
 {
-    public partial class PamphletDelivery : Interfaces.IKnownIndividualLog, Interfaces.IVoterLog
+    public partial class PamphletDelivery : Interfaces.IKnownIndividualLog, Interfaces.IVoterLog, Interfaces.IAddressLog
     {
         public DateTime InteractionDate
         {

@@ -210,6 +210,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAddressLog.cs" />
     <Compile Include="Interfaces\IHtmlDivable.cs" />
     <Compile Include="Interfaces\IKnownIndividualLog.cs" />
     <Compile Include="Interfaces\IKnownIndividual.cs" />
@@ -369,6 +370,7 @@
     <Content Include="Views\AssignedCalls\MyCalls.cshtml" />
     <Content Include="Views\PhoneCalls\NewCall.cshtml" />
     <Content Include="Views\VoterAssessments\AssessmentPartial.cshtml" />
+    <Content Include="Views\Addresses\ViewLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

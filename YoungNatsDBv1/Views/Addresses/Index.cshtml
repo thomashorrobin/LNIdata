@@ -49,7 +49,8 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AddressId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AddressId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AddressId })
+            @Html.ActionLink("Delete", "Delete", new { id = item.AddressId }) |
+            @Html.ActionLink("View log", "ViewLog", new { id = item.AddressId })
         </td>
     </tr>
 }

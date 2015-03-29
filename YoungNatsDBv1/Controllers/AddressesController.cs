@@ -21,6 +21,28 @@ namespace YoungNatsDBv1.Controllers
             return View(addresses.ToList());
         }
 
+        public ActionResult ViewLog(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Address address = db.Addresses.Find(id);
+            List<Interfaces.IAddressLog> log = new List<Interfaces.IAddressLog>();
+            log.AddRange(db.DoorKnocks.Where(e => e.AddressId == id));
+            log.AddRange(db.PamphletDeliveries.Where(e => e.AddressId == id));
+            //log.AddRange(db.PhoneCalls.Where(e => e.AddressId == id));
+            ViewBag.log = log;
+            ViewBag.address = address.Address1;
+            List<string> voters = new List<string>();
+            foreach (Voter voter in db.Voters.Where(e => e.AddressId == id))
+            {
+                voters.Add(voter.FullName);
+            }
+            ViewBag.voters = voters;
+            return View();
+        }
+
         // GET: Addresses/Details/5
         public ActionResult Details(int? id)
         {
