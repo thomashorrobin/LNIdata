@@ -10,6 +10,7 @@ using YoungNatsDBv1.DataModels;
 
 namespace YoungNatsDBv1.Controllers
 {
+    [Authorize(Roles = "checked")]
     public class PhoneNumbersController : Controller
     {
         private Model1 db = new Model1();

@@ -10,7 +10,7 @@ using YoungNatsDBv1.DataModels;
 
 namespace YoungNatsDBv1.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "checked")]
     public class VotersController : Controller
     {
         private Model1 db = new Model1();

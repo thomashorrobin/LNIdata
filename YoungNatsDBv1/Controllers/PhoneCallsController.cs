@@ -11,6 +11,7 @@ using YoungNatsDBv1.Models;
 
 namespace YoungNatsDBv1.Controllers
 {
+    [Authorize(Roles = "checked")]
     public class PhoneCallsController : Controller
     {
         private Model1 db = new Model1();
