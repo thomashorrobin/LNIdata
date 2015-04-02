@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Xml.Linq;
 using YoungNatsDBv1.DataModels;
 
@@ -20,6 +21,29 @@ namespace YoungNatsDBv1.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [Authorize(Roles="admin")]
+        public ActionResult ManageUsers()
+        {
+            ViewBag.KnownIndividuals = new SelectList(db.KnownIndividuals, "KnownIndividualId", "FullName");
+            return View(db.AspNetUsers);
+        }
+
+        [Authorize(Roles="admin")]
+        public string MatchUserToIndividual(int? KnownIndividualId, string id)
+        {
+            AspNetUser user = db.AspNetUsers.Find(id);
+            user.KnownIndividualId = KnownIndividualId;
+            return "success";
+        }
+
+        [Authorize(Roles="admin")]
+        public string AllowUserIntoSite(string id)
+        {
+            AspNetUser user = db.AspNetUsers.Find(id);
+            Roles.AddUserToRole(user.UserName, "checked");
+            return "Success";
         }
 
         public ActionResult Map()

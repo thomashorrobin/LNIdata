@@ -371,6 +371,7 @@
     <Content Include="Views\PhoneCalls\NewCall.cshtml" />
     <Content Include="Views\VoterAssessments\AssessmentPartial.cshtml" />
     <Content Include="Views\Addresses\ViewLog.cshtml" />
+    <Content Include="Views\Home\ManageUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

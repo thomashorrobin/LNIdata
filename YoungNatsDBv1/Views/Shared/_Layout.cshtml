@@ -25,6 +25,10 @@
                     <li>@Html.ActionLink("Members", "Index", "KnownIndividuals")</li>
                     <li>@Html.ActionLink("Voters", "Index", "Voters")</li>
                     <li>@Html.ActionLink("Data", "ManageDatabase", "Home")</li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Manage Users", "ManageUsers", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
