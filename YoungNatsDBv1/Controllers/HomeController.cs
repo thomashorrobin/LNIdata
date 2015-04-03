@@ -13,13 +13,17 @@ using YoungNatsDBv1.DataModels;
 namespace YoungNatsDBv1.Controllers
 {
     [RequireHttps]
-    [Authorize(Roles="checked")]
+    [Authorize]
     public class HomeController : Controller
     {
         private Model1 db = new Model1();
 
         public ActionResult Index()
         {
+            //if (!User.IsInRole("checked"))
+            //{
+            //    return Content("You need to be authorised before you can enter this site. Please contact Ben or Tom for assistance.");
+            //}
             return View();
         }
 
@@ -31,26 +35,37 @@ namespace YoungNatsDBv1.Controllers
         }
 
         [Authorize(Roles="admin")]
-        public string MatchUserToIndividual(int? KnownIndividualId, string id)
+        public ActionResult MatchUserToIndividual(int? KnownIndividualId, string id)
         {
             AspNetUser user = db.AspNetUsers.Find(id);
+            KnownIndividual knownIdividual = db.KnownIndividuals.Find(KnownIndividualId);
             user.KnownIndividualId = KnownIndividualId;
-            return "success";
+            db.SaveChanges();
+            return Content("Sucessfully added " + knownIdividual.FullName + " to username:" + user.UserName);
         }
 
         [Authorize(Roles="admin")]
-        public string AllowUserIntoSite(string id)
+        public ActionResult AllowUserIntoSite(string id)
         {
             AspNetUser user = db.AspNetUsers.Find(id);
-            Roles.AddUserToRole(user.UserName, "checked");
-            return "Success";
+            try
+            {
+                db.Database.SqlQuery<int>("INSERT INTO dbo.AspNetUserRoles(UserId,RoleId) VALUES('" + user.Id + "','tom');").FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                return Content(ex.Message);
+            }
+            return Content("Added " + user.UserName + " to checked role");
         }
 
+    [Authorize(Roles = "checked")]
         public ActionResult Map()
         {
             return View();
         }
 
+    [Authorize(Roles = "checked")]
         public ActionResult ManageDatabase()
         {
             ViewBag.AddressesCount = db.Addresses.Count();
@@ -73,6 +88,7 @@ namespace YoungNatsDBv1.Controllers
             return View();
         }
 
+    [Authorize(Roles = "checked")]
         public string MarkerData()
         {
             try
@@ -91,6 +107,7 @@ namespace YoungNatsDBv1.Controllers
             }
         }
 
+    [Authorize(Roles = "checked")]
         public ActionResult DownloadAddresses(int numberToRun)
         {
             StringBuilder text = new StringBuilder();
