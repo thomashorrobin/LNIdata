@@ -20,10 +20,6 @@ namespace YoungNatsDBv1.Controllers
 
         public ActionResult Index()
         {
-            //if (!User.IsInRole("checked"))
-            //{
-            //    return Content("You need to be authorised before you can enter this site. Please contact Ben or Tom for assistance.");
-            //}
             return View();
         }
 
