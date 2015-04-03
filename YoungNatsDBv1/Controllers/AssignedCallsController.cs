@@ -41,7 +41,8 @@ namespace YoungNatsDBv1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             db.AssignedCalls.Find(id).CallCompleted = true;
-            return MyCalls();
+            db.SaveChanges();
+            return RedirectToAction("MyCalls");
         }
 
         // GET: AssignedCalls/Details/5

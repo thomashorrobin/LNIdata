@@ -13,7 +13,7 @@ using YoungNatsDBv1.DataModels;
 namespace YoungNatsDBv1.Controllers
 {
     [RequireHttps]
-    [Authorize]
+    [Authorize(Roles="checked")]
     public class HomeController : Controller
     {
         private Model1 db = new Model1();
