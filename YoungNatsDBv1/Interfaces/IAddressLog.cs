@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YoungNatsDBv1.Interfaces
 {
-    interface IAddressLog : IHtmlDivable
+    public interface IAddressLog : IHtmlDivable
     {
         DateTime InteractionDate { get; }
         int AddressId { get; }

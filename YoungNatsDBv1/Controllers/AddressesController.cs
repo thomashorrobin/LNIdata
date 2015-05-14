@@ -29,11 +29,8 @@ namespace YoungNatsDBv1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Address address = db.Addresses.Find(id);
-            List<Interfaces.IAddressLog> log = new List<Interfaces.IAddressLog>();
-            log.AddRange(db.DoorKnocks.Where(e => e.AddressId == id));
-            log.AddRange(db.PamphletDeliveries.Where(e => e.AddressId == id));
             //log.AddRange(db.PhoneCalls.Where(e => e.AddressId == id));
-            ViewBag.log = log;
+            ViewBag.log = Address.LogData((int)id);
             ViewBag.address = address.Address1;
             List<string> voters = new List<string>();
             foreach (Voter voter in db.Voters.Where(e => e.AddressId == id))

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YoungNatsDBv1.Interfaces
 {
-    interface IHtmlDivable
+    public interface IHtmlDivable
     {
          string GetHtml(string[] elementsToExclude);
     }

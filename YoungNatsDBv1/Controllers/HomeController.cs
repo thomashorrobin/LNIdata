@@ -18,8 +18,21 @@ namespace YoungNatsDBv1.Controllers
     {
         private Model1 db = new Model1();
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    return Content("not even authenticated");
+            //}
+            //else if (!User.IsInRole("checked"))
+            //{
+            //    return Content("not approved");
+            //}
+            //else
+            //{
+            //    return View();
+            //}
             return View();
         }
 
@@ -102,6 +115,30 @@ namespace YoungNatsDBv1.Controllers
                 return ex.Message + " inner exception: "; // + ex.InnerException.Message;
             }
         }
+
+    [Authorize(Roles = "checked")]
+    public string MarkerData2()
+    {
+        try
+        {
+            string json = "";
+            foreach (DataModels.Address address in db.Addresses.Where(e => e.GeoTag != null))
+            {
+                string logs = "";
+                foreach (Interfaces.IAddressLog item in Address.LogData(address.AddressId).OrderByDescending(e => e.InteractionDate).Take(3))
+                {
+                    logs += item.GetHtml(new string[0]);
+                }
+                json += "{ \"marker\": " + address.GetJson() + ", \"infowindow\": { \"content\": \"<h2>" + address.Address1 + "</h2>" + logs + "\" }},";
+            }
+            json = json.TrimEnd(',');
+            return "[" + json + "]";
+        }
+        catch (Exception ex)
+        {
+            return ex.Message + " inner exception: "; // + ex.InnerException.Message;
+        }
+    }
 
     [Authorize(Roles = "checked")]
         public ActionResult DownloadAddresses(int numberToRun)

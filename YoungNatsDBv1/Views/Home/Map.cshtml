@@ -30,14 +30,27 @@
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
 
+        function addInfowindow(marker, infowindow) {
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+
         $.ajax({
-            url: "/Home/MarkerData",
+            url: "/Home/MarkerData2",
+
             success: function (result) {
                 var j = JSON.parse(result);
+                var infoWindowArray = [];
+                var markerArray = [];
                 for (var i = 0; i < j.length; i++) {
-                    var m = new google.maps.Marker(j[i]);
-                    m.setMap(map);
+                    markerArray[i] = new google.maps.Marker(j[i].marker);
+                    infoWindowArray[i] = new google.maps.InfoWindow(j[i].infowindow);
+                    markerArray[i].setMap(map);
+                    addInfowindow(markerArray[i], infoWindowArray[i]);
                 }
+                console.log(markerArray);
+                console.log(infoWindowArray);
             }
         });
     }

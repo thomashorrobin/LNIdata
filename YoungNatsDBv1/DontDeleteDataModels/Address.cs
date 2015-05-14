@@ -8,6 +8,14 @@ namespace YoungNatsDBv1.DataModels
 {
     public partial class Address
     {
+        public static List<Interfaces.IAddressLog> LogData(int AddressId)
+        {
+            Model1 db = new Model1();
+            List<Interfaces.IAddressLog> log = new List<Interfaces.IAddressLog>();
+            log.AddRange(db.DoorKnocks.Where(e => e.AddressId == AddressId));
+            log.AddRange(db.PamphletDeliveries.Where(e => e.AddressId == AddressId));
+            return log;
+        }
 
         public string GetJson()
         {
