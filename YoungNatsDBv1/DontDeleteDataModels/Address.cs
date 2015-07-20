@@ -48,6 +48,10 @@ namespace YoungNatsDBv1.DataModels
             {
                 icon = "http://maps.google.com/mapfiles/ms/icons/black-dot.png";
             }
+            if (GeoTag == null)
+            {
+                return "{ \"position\": null, \"title\": \"" + this.Address1 + "\", \"icon\":\"" + icon + "\" }";
+            }
             return "{ \"position\": " + GeoTag.GetJson() + ", \"title\": \"" + this.Address1 + "\", \"icon\":\"" + icon + "\" }";
         }
     }
